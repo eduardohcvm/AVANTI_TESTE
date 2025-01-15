@@ -29,3 +29,13 @@ Este projeto foi criado com o Create React App e apresenta uma tela de cadastro 
 1. projeto feito em create-react-app 
 2. a tela de login fica em src->componentes->cadastro-> index.jsx
 3. o arquivo "App.js" serve para manipular os arquivos em react que serão exibidos e controlar as bibliotecas
+
+Deploy
+O projeto está disponível online através da Vercel. Você pode acessá-lo diretamente [clicando aqui (https://avanti-teste-hbhzfo399-eduardohcvms-projects.vercel.app/)].
+
+Tecnologias Utilizadas
+React: Framework principal para criação da interface.
+TailwindCSS: Biblioteca para estilização de componentes.
+Vercel: Plataforma utilizada para deploy do projeto.
+Observações
+Este é um projeto simples com validação básica. Ele não possui integração com back-end, mas pode ser facilmente expandido para incluir funcionalidades mais avançadas.
