@@ -10,6 +10,11 @@ const Footer = () => {
                     <div className="mb-6 md:mb-0 flex flex-col items-center md:items-start">
                         <a href="/" className="text-gray-100 text-2xl font-semibold">
                             Mibe Soluções
+                            <img
+                                src={"/Arquivo/MARCA-MIBE-SOLUCOES.png"}
+                                alt={"Logo"}
+                                className={"h-12"}
+                            />
                         </a>
                     </div>
 
@@ -24,7 +29,7 @@ const Footer = () => {
                                     className="h-8 transition-transform duration-300 ease-in-out hover:scale-110"
                                 />
                             </a>
-                            <a href="https://www.instagram.com/mibesolucoes">
+                            <a href="https://www.instagram.com/edu_hen21">
                                 <img
                                     src="/Arquivo/download.jpg"
                                     alt="Instagram"
@@ -49,7 +54,7 @@ const Footer = () => {
                             <a href="mailto:contato@mibesolucoes.com" className="hover:text-gray-100 transition">
                                 contato@mibesolucoes.com
                             </a><br />
-                            <a href="tel:+5511987654321" className="hover:text-gray-100 transition">
+                            <a href="tel:+5583996896050" className="hover:text-gray-100 transition">
                                 +55 11 98765-4321
                             </a>
                         </address>

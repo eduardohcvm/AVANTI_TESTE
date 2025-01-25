@@ -123,30 +123,38 @@ const Home = () => {
             </section>
 
             {/* Services Section */}
-            <section className="py-8 sm:py-16 bg-gray-100">
-                <div className="container mx-auto px-4 sm:px-6 lg:px-20">
-                    <h2 className="text-2xl sm:text-4xl font-bold text-center mb-8 text-gray-800">Conheça nossas soluções</h2>
-                    <div className="grid grid-cols-1 gap-8">
+            <section className="py-16 bg-gray-100">
+                <div className="container mx-auto px-6 lg:px-20">
+                    <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">Conheça nossas soluções</h2>
+
+                    <div className="grid grid-cols-1 gap-16">
                         {serviceCategories.map((category, index) => (
                             <div
                                 key={index}
-                                className={`flex flex-col items-center sm:flex-row bg-white rounded-lg shadow-md p-6 sm:p-8 border border-gray-200 ${
-                                    index % 2 === 0 ? "sm:flex-row-reverse" : ""
+                                className={`flex flex-col md:flex-row items-center md:items-stretch bg-white rounded-lg shadow-md p-8 border border-gray-200 transition-transform duration-300 hover:scale-105 hover:shadow-xl ${
+                                    index % 2 === 0 ? "md:flex-row-reverse" : ""
                                 }`}>
-                                <img
-                                    src="/Arquivo/icone_mibe.png"
-                                    alt="Logo Mibe"
-                                    className="w-16 h-16 sm:w-32 sm:h-32 object-contain mb-4 sm:mb-0"
-                                />
-                                <div className="text-center sm:text-left sm:ml-6">
-                                    <h3 className="text-xl sm:text-2xl font-bold text-blue-600 mb-4">{category.title}</h3>
-                                    <ul className="list-disc ml-4">
-                                        {category.resources.map((resource, idx) => (
-                                            <li key={idx} className="text-sm sm:text-lg text-gray-600">
-                                                {resource}
-                                            </li>
+                                {/* Logo */}
+                                <div className="flex-shrink-0 w-full md:w-1/3 flex justify-center items-center mb-8 md:mb-0">
+                                    <img
+                                        src="/Arquivo/icone_mibe.png"
+                                        alt="Logo Mibe"
+                                        className="w-32 h-32 object-contain"
+                                    />
+                                </div>
+
+                                {/* Cards */}
+                                <div className="w-full md:w-2/3 flex flex-col justify-center">
+                                    <h3 className="text-3xl font-bold text-blue-600 mb-6 text-center md:text-left">{category.title}</h3>
+                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                        {category.resources.map((resource, resourceIndex) => (
+                                            <div
+                                                key={resourceIndex}
+                                                className="flex flex-col items-center p-6 bg-gray-50 border border-gray-300 rounded-lg shadow-md hover:bg-blue-200 transition duration-900">
+                                                <h4 className="text-xl font-semibold text-gray-700 mb-2 text-center">{resource}</h4>
+                                            </div>
                                         ))}
-                                    </ul>
+                                    </div>
                                 </div>
                             </div>
                         ))}
