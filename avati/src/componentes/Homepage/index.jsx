@@ -97,27 +97,22 @@ const Home = () => {
                     interval={13000}
                     className="shadow-lg rounded-lg overflow-hidden w-full mx-auto">
                     {carouselItems.map((item) => (
-                        <div key={item.id} className="relative flex flex-col md:flex-row items-center bg-gray-800">
-                            <div className="flex-shrink-0 w-full md:w-2/3">
-                                <img
-                                    src={item.image}
-                                    alt={`Apresentação ${item.id}`}
-                                    className="object-cover w-full h-[500px] md:h-[600px]"
-                                />
-                            </div>
-
-                            <div className="w-full md:w-1/3 bg-gray-900 text-white p-8 flex flex-col justify-center items-center">
-                                <div className="mb-8 text-center">
-                                    <h3 className="text-3xl font-bold mb-4">{item.text}</h3>
-                                    <p className="text-lg text-gray-300">Explore nossas soluções personalizadas.</p>
-                                </div>
-                                <div className="grid grid-cols-1 gap-6 w-full">
+                        <div key={item.id} className="relative flex flex-col items-center bg-gray-800">
+                            <img
+                                src={item.image}
+                                alt={`Apresentação ${item.id}`}
+                                className="object-cover w-full h-[300px] sm:h-[500px] md:h-[600px]"
+                            />
+                            <div className="w-full bg-gray-900 text-white p-4 md:p-8 flex flex-col items-center">
+                                <h3 className="text-xl sm:text-3xl font-bold mb-2">{item.text}</h3>
+                                <p className="text-sm sm:text-lg text-gray-300">Explore nossas soluções personalizadas.</p>
+                                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 mt-4 w-full">
                                     {item.cards.map((card) => (
                                         <div
                                             key={card.id}
-                                            className="flex flex-col p-6 border border-gray-700 bg-gray-800 rounded-lg shadow-md transition-transform transform hover:scale-105 duration-300 hover:shadow-lg">
-                                            <h4 className="text-2xl font-semibold text-blue-400 mb-3 text-center">{card.title}</h4>
-                                            <p className="text-gray-400 text-center">{card.description}</p>
+                                            className="p-4 bg-gray-800 border border-gray-700 rounded-lg text-center shadow-md hover:scale-105 transition-transform">
+                                            <h4 className="text-lg sm:text-xl font-semibold text-blue-400">{card.title}</h4>
+                                            <p className="text-sm text-gray-400">{card.description}</p>
                                         </div>
                                     ))}
                                 </div>
@@ -128,38 +123,30 @@ const Home = () => {
             </section>
 
             {/* Services Section */}
-            <section className="py-16 bg-gray-100">
-                <div className="container mx-auto px-6 lg:px-20">
-                    <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">Conheça nossas soluções</h2>
-
-                    <div className="grid grid-cols-1 gap-16">
+            <section className="py-8 sm:py-16 bg-gray-100">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-20">
+                    <h2 className="text-2xl sm:text-4xl font-bold text-center mb-8 text-gray-800">Conheça nossas soluções</h2>
+                    <div className="grid grid-cols-1 gap-8">
                         {serviceCategories.map((category, index) => (
                             <div
                                 key={index}
-                                className={`flex flex-col md:flex-row items-center md:items-stretch bg-white rounded-lg shadow-md p-8 border border-gray-200 transition-transform duration-300 hover:scale-105 hover:shadow-xl ${
-                                    index % 2 === 0 ? "md:flex-row-reverse" : ""
+                                className={`flex flex-col items-center sm:flex-row bg-white rounded-lg shadow-md p-6 sm:p-8 border border-gray-200 ${
+                                    index % 2 === 0 ? "sm:flex-row-reverse" : ""
                                 }`}>
-                                {/* Logo */}
-                                <div className="flex-shrink-0 w-full md:w-1/3 flex justify-center items-center mb-8 md:mb-0">
-                                    <img
-                                        src="/Arquivo/icone_mibe.png"
-                                        alt="Logo Mibe"
-                                        className="w-32 h-32 object-contain"
-                                    />
-                                </div>
-
-                                {/* Cards */}
-                                <div className="w-full md:w-2/3 flex flex-col justify-center">
-                                    <h3 className="text-3xl font-bold text-blue-600 mb-6 text-center md:text-left">{category.title}</h3>
-                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                        {category.resources.map((resource, resourceIndex) => (
-                                            <div
-                                                key={resourceIndex}
-                                                className="flex flex-col items-center p-6 bg-gray-50 border border-gray-300 rounded-lg shadow-md hover:bg-blue-200 transition duration-900">
-                                                <h4 className="text-xl font-semibold text-gray-700 mb-2 text-center">{resource}</h4>
-                                            </div>
+                                <img
+                                    src="/Arquivo/icone_mibe.png"
+                                    alt="Logo Mibe"
+                                    className="w-16 h-16 sm:w-32 sm:h-32 object-contain mb-4 sm:mb-0"
+                                />
+                                <div className="text-center sm:text-left sm:ml-6">
+                                    <h3 className="text-xl sm:text-2xl font-bold text-blue-600 mb-4">{category.title}</h3>
+                                    <ul className="list-disc ml-4">
+                                        {category.resources.map((resource, idx) => (
+                                            <li key={idx} className="text-sm sm:text-lg text-gray-600">
+                                                {resource}
+                                            </li>
                                         ))}
-                                    </div>
+                                    </ul>
                                 </div>
                             </div>
                         ))}
@@ -168,22 +155,21 @@ const Home = () => {
             </section>
 
             {/* Client Feedback Section */}
-            <section className="py-16 bg-gradient-to-r from-blue-900 to-gray-800">
-                <div className="container mx-auto px-6 lg:px-20">
-                    <h2 className="text-4xl font-bold text-center mb-12 text-white">O que nossos clientes dizem</h2>
-
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <section className="py-8 sm:py-16 bg-gradient-to-r from-blue-900 to-gray-800">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-20">
+                    <h2 className="text-2xl sm:text-4xl font-bold text-center mb-8 text-white">O que nossos clientes dizem</h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                         {clientFeedback.map((feedback) => (
                             <div
                                 key={feedback.id}
-                                className="flex flex-col items-center p-6 bg-gray-900 border border-gray-700 rounded-lg shadow-md hover:bg-gray-800 transition-transform transform hover:scale-105 duration-300">
+                                className="flex flex-col items-center p-4 sm:p-6 bg-gray-900 border border-gray-700 rounded-lg shadow-md hover:scale-105 transition-transform">
                                 <img
                                     src={feedback.icon}
                                     alt={`Feedback ${feedback.id}`}
-                                    className="w-16 h-16 mb-4"
+                                    className="w-12 h-12 sm:w-16 sm:h-16 mb-4"
                                 />
-                                <h4 className="text-2xl font-bold text-blue-400 mb-2">{feedback.number}</h4>
-                                <p className="text-lg text-gray-300 text-center">{feedback.description}</p>
+                                <h4 className="text-lg sm:text-xl font-bold text-blue-400">{feedback.number}</h4>
+                                <p className="text-sm sm:text-base text-gray-300 text-center">{feedback.description}</p>
                             </div>
                         ))}
                     </div>
