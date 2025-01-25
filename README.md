@@ -1,6 +1,3 @@
-# Cadastro com React
-
-Este projeto foi criado com o Create React App e apresenta uma tela de cadastro funcional. O design é simples, com validação básica de campos e um plano de fundo interativo com o texto "AVATI".
 
 ### README.md
 
